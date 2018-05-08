@@ -1,0 +1,27 @@
+using UnityEngine;
+using System.Collections;
+
+namespace UnityEngine.UI.Extensions
+{
+	public abstract class uTweenValue : uTweener {
+
+		public float from;
+		public float to;
+
+		float mValue;
+
+		public float value {
+			get { return mValue;}
+			set { 
+				mValue = value;
+			}
+		}
+
+		virtual protected void ValueUpdate(float value, bool isFinished) {}
+
+		protected override void OnUpdate (float factor, bool isFinished) {
+			value = from + factor * (to - from);
+			ValueUpdate(value, isFinished);		
+		}
+	}
+}
