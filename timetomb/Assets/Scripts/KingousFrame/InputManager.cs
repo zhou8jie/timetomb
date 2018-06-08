@@ -25,6 +25,10 @@ public class InputManager : MonoBehaviour {
     {
         m_EventHandleres.Add(handler);
     }
+    public void RemoveEventHandler(IInputEventHandler handler)
+    {
+        m_EventHandleres.Remove(handler);
+    }
 	
 	void Update () {
         if (m_EventHandleres.Count > 0)

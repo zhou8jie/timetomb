@@ -11,13 +11,13 @@ public class UIManager
         return inst ?? (inst = new UIManager());
     }
 
-    public UIRoot2 root { get { return _root; } }
+    public UIRoot root { get { return _root; } }
 
     private const int ORDER_STEP = 10;
 
     private List<Layer> _layers = new List<Layer>();
     private Dictionary<string, UILayerId> _name2layerDic = new Dictionary<string, UILayerId>();
-    private UIRoot2 _root;
+    private UIRoot _root;
 
     private UIManager()
     {
@@ -30,7 +30,7 @@ public class UIManager
             trans.localPosition = Vector3.zero;
             trans.localRotation = Quaternion.identity;
         }
-        _root = rootObj.GetComponent<UIRoot2>();
+        _root = rootObj.GetComponent<UIRoot>();
         _root.gameObject.name = "UIRoot";
 
         _layers.Add(new Layer() { id = UILayerId.Hud, order = 0 });

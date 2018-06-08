@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timetomb", "timetomb.csproj", "{C38D7D7C-0A35-D206-2660-5442F0008795}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timetomb.Editor", "timetomb.Editor.csproj", "{E57694EA-D5B8-25EE-953A-9CC362350828}"

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public abstract class UIBase : MonoBehaviour
 {
@@ -40,6 +42,26 @@ public abstract class UIBase : MonoBehaviour
         UIManager.get().remove(this);
         onHide();
         Object.Destroy(gameObject);
+    }
+
+    protected void AddTriggerListener(GameObject obj, EventTriggerType eventID, UnityAction<BaseEventData> action)
+    {
+        EventTrigger trigger = obj.GetComponent<EventTrigger>();
+        if (trigger == null)
+        {
+            trigger = obj.AddComponent<EventTrigger>();
+        }
+
+        if (trigger.triggers.Count == 0)
+        {
+            trigger.triggers = new List<EventTrigger.Entry>();
+        }
+
+        UnityAction<BaseEventData> callback = new UnityAction<BaseEventData>(action);
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = eventID;
+        entry.callback.AddListener(callback);
+        trigger.triggers.Add(entry);
     }
 
     protected virtual void onCreate() { }
