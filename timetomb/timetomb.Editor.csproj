@@ -255,6 +255,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Allsky\AllSkyDemoEnvironment\Specular Snow Vertex Colours.shader" />
+    <None Include="Assets\Arts\Mat\Star.shader" />
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
