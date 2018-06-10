@@ -21,19 +21,23 @@ public class GameMode
 
     public GameMode()
     {
-        m_FSM.addEnterState(State_Main, EnterMain);
+        m_FSM.addEnterState(State_Main, EnterMainState);
         m_FSM.addEnterState(State_EnterLevel, EnterEnterLevelState);
+        m_FSM.addEnterState(State_Play, EnterPlayState);
         m_FSM.addEnterState(State_Solved, EnterSolvedState);
+        m_FSM.addEnterState(State_Settlement, EnterSettlementState);
     }
 
-    void EnterMain()
+    void EnterMainState()
     {
         UIManager.get().show("UIMain");
+        GameGlobal.Instance().levelMgr.EnableLevels(false);
     }
 
     void EnterEnterLevelState()
     {
         UIManager.get().find<UIMain>("UIMain").ToTransparent(1f);
+        Debug.LogError("enter levell...");
         GameGlobal.Instance().timer.AddTimer(1f, 1f, false, () => {
             ChangeGameState(GameMode.State_Play);
         });
@@ -41,21 +45,23 @@ public class GameMode
 
     void EnterPlayState()
     {
-        UIManager.get().find("UIMain").hide();
+        UIManager.get().hide("UIMain");
+        GameGlobal.Instance().levelMgr.EnableLevels(true);
         GameGlobal.Instance().levelMgr.StartCurLevel();
-    }
-
-    void UpdatePlayState()
-    {
-
     }
 
     void EnterSolvedState()
     {
+        GameGlobal.Instance().levelMgr.FinishCurLevel();
         GameGlobal.Instance().timer.AddTimer(1f, 1f, false, () =>
         {
             ChangeGameState(GameMode.State_Settlement);
         });
+    }
+
+    void EnterSettlementState()
+    {
+        UIManager.get().show("UISettlement");
     }
 
     public void ChangeGameState(string state)

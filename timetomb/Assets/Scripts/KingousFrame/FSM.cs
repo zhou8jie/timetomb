@@ -12,9 +12,9 @@ namespace KingousFramework
 
     public class FSM
     {
-        Dictionary<string, EnterState> m_enterStates;
-        Dictionary<string, UpdateState> m_updateStates;
-        Dictionary<string, LeaveState> m_leaveStates;
+        Dictionary<string, EnterState> m_enterStates = new Dictionary<string, EnterState>();
+        Dictionary<string, UpdateState> m_updateStates = new Dictionary<string, UpdateState>();
+        Dictionary<string, LeaveState> m_leaveStates = new Dictionary<string, LeaveState>();
 
         string m_curState = "";
 

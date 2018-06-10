@@ -10,6 +10,7 @@ public class Level : MonoBehaviour, IInputEventHandler
     void Awake()
     {
         m_ArcBall = new ArcBall(this.transform);
+        m_ArcBall.lockAxisY = true;
     }
 
     public float GetFitRate(float delta)
@@ -24,12 +25,15 @@ public class Level : MonoBehaviour, IInputEventHandler
 
     public bool IsSolved()
     {
+        if (GetFitRate(5f) == 0)
+            return true;
         return false;
     }
 
     public void Begin()
     {
         this.gameObject.SetActive(true);
+        theStars.transform.rotation = Quaternion.Euler(theStars.initEuler);
     }
 
     public void OnPressDown(Vector3 pos)

@@ -1,5 +1,5 @@
 ﻿public static class UIName
 {
-    public static readonly string Main = "Main";
-    public static readonly string Settlement = "Settlement";
+    public static readonly string UIMain = "UIMain";
+    public static readonly string UISettlement = "UISettlement";
 }

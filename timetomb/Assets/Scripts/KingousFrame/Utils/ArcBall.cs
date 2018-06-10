@@ -42,9 +42,9 @@ public class ArcBall : IInputEventHandler {
             return;
 
         if (lockAxisY)
-            axis = Vector3.up;
+            axis = Vector3.up * Mathf.Sign(axis.y);
         if (lockAxisX)
-            axis = Vector3.right;
+            axis = Vector3.right * Mathf.Sign(axis.x);
         
         axis.Normalize();
 

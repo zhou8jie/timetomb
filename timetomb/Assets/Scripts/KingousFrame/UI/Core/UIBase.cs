@@ -39,6 +39,7 @@ public abstract class UIBase : MonoBehaviour
 
     public void hide()
     {
+        Debug.LogError(gameObject.name);
         UIManager.get().remove(this);
         onHide();
         Object.Destroy(gameObject);

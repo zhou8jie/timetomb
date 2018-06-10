@@ -12,10 +12,16 @@ public class LevelManager : MonoBehaviour
         m_Levels = GetComponentsInChildren<Level>();
     }
 
+    public void EnableLevels(bool enable)
+    {
+        gameObject.SetActive(enable);
+    }
+
     public void StartCurLevel()
     {
         int lvlIdx = GameModule.Instance().curLevelIdx;
         m_CurLevel = m_Levels[lvlIdx];
+        m_CurLevel.Begin();
         GameGlobal.Instance().inputMgr.AddEventHandler(m_CurLevel);
     }
 
@@ -38,7 +44,7 @@ public class LevelManager : MonoBehaviour
         {
             if (m_CurLevel.IsSolved())
             {
-                FinishCurLevel();
+                Debug.LogError("solved...");
                 mode.ChangeGameState(GameMode.State_Solved);
             }
         }

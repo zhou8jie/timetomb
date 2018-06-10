@@ -171,11 +171,10 @@ public class UIManager
         var go = Object.Instantiate(prefab);
         var ui = go.GetComponent<UIBase>();
 
-        var layer = getLayer(ui.layerId);
+//        var layer = getLayer(ui.layerId);
 
         go.name = name;
         _name2layerDic[name] = ui.layerId;
-
         ui.show();
 
         return ui;
@@ -188,9 +187,12 @@ public class UIManager
 
     public void hide(string name)
     {
+        Debug.LogError(name);
         var cur = find(name);
         if (cur != null)
             cur.hide();
+        else
+            Debug.LogError("cant find ui named : " + name);
     }
 
     public void hideAll(UILayerId layerId)
@@ -214,5 +216,6 @@ public class UIManager
         {
             return list.Find(ui => name == ui.name);
         }
+
     }
 }
