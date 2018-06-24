@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
     {
         if (m_CurLevel == null)
             return;
+        m_CurLevel.End();
         GameGlobal.Instance().inputMgr.RemoveEventHandler(m_CurLevel);
         m_CurLevel = null;
     }
@@ -44,7 +45,6 @@ public class LevelManager : MonoBehaviour
         {
             if (m_CurLevel.IsSolved())
             {
-                Debug.LogError("solved...");
                 mode.ChangeGameState(GameMode.State_Solved);
             }
         }

@@ -1,56 +1,20 @@
-﻿<Properties StartupConfiguration="{C38D7D7C-0A35-D206-2660-5442F0008795}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameUI/UIMain.cs">
+﻿<Properties StartupConfiguration="{C38D7D7C-0A35-D206-2660-5442F0008795}|" StartupItem="timetomb.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Test.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameLogic/GameGlobal.cs" Line="47" Column="1" />
-      <File FileName="Assets/Scripts/GameLogic/LevelManager.cs" Line="48" Column="37" />
-      <File FileName="Assets/Scripts/GameLogic/GameMode.cs" Line="28" Column="67" />
-      <File FileName="Assets/Scripts/KingousFrame/FSM.cs" Line="74" Column="9" />
-      <File FileName="Assets/Scripts/GameUI/UIMain.cs" Line="58" Column="31" />
-      <File FileName="Assets/Scripts/KingousFrame/UI/Core/UIManager.cs" Line="174" Column="3" />
-      <File FileName="Assets/Scripts/KingousFrame/UI/Core/UIBase.cs" Line="25" Column="27" />
-      <File FileName="Assets/Scripts/KingousFrame/UI/Core/UIName.cs" Line="4" Column="53" />
-      <File FileName="Assets/Scripts/GameLogic/Level.cs" Line="12" Column="29" />
-      <File FileName="Assets/Scripts/KingousFrame/Utils/ArcBall.cs" Line="47" Column="55" />
-      <File FileName="Assets/Scripts/KingousFrame/UI/Core/Layout/DataDrivenLayoutGroup.cs" Line="38" Column="1" />
-      <File FileName="Assets/Scripts/GameUI/UISettlement.cs" Line="10" Column="5" />
+      <File FileName="Assets\Scripts\GameLogic\GameGlobal.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\GameMode.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KingousFrame\FSM.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameUI\UIMain.cs" Line="58" Column="31" />
+      <File FileName="Assets\Scripts\KingousFrame\UI\Core\UIManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KingousFrame\UI\Core\UIBase.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KingousFrame\UI\Core\UIName.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameLogic\Level.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KingousFrame\Utils\ArcBall.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\KingousFrame\UI\Core\Layout\DataDrivenLayoutGroup.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameUI\UISettlement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Test.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="timetomb" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="GameLogic" expanded="True" />
-                <Node name="GameUI" expanded="True">
-                  <Node name="UIMain.cs" selected="True" />
-                </Node>
-                <Node name="KingousFrame" expanded="True">
-                  <Node name="UI" expanded="True">
-                    <Node name="Core" expanded="True">
-                      <Node name="Layout" expanded="True" />
-                    </Node>
-                  </Node>
-                  <Node name="Utils" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State name="__root__">
-          <Node name="timetomb" expanded="True" selected="True" />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="timetomb" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

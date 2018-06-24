@@ -158,7 +158,7 @@ public class UIManager
         return ui;
     }
     
-    public UIBase show(string name)
+    public UIBase show(string name, float during=0)
     {
         var cur = find(name);
         if (cur != null)
@@ -175,7 +175,11 @@ public class UIManager
 
         go.name = name;
         _name2layerDic[name] = ui.layerId;
-        ui.show();
+//        ui.show();
+        if (during > 0)
+            ui.fadeIn(during);
+        else
+            ui.show();
 
         return ui;
     }
@@ -185,12 +189,18 @@ public class UIManager
         return show(name) as T;
     }
 
-    public void hide(string name)
+    public void hide(string name, float during=0)
     {
         Debug.LogError(name);
         var cur = find(name);
         if (cur != null)
-            cur.hide();
+        {
+            //cur.hide();
+            if (during > 0)
+                cur.fadeOut(during);
+            else
+                cur.hide();
+        }
         else
             Debug.LogError("cant find ui named : " + name);
     }

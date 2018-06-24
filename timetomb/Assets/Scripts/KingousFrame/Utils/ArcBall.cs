@@ -9,25 +9,35 @@ public class ArcBall : IInputEventHandler {
 
     public bool lockAxisY { set; get; }
     public bool lockAxisX { set; get; }
+    public bool enable { set; get; }
 
     public ArcBall(Transform target)
     {
         m_Target = target;
         lockAxisX = false;
         lockAxisY = false;
+        enable = true;
     }
 
     public void OnPressDown(Vector3 pos)
     {
+        if (!enable)
+            return;
+
         m_PressPos = pos;
     }
 
     public void OnReleaseUp(Vector3 pos)
     {
+        if (!enable)
+            return;
     }
 
     public void OnDrag(Vector3 pos)
     {
+        if (!enable)
+            return;
+
         Vector3 p1 = GetBallPos(m_PressPos);
         Vector3 p2 = GetBallPos(pos);
 
@@ -48,7 +58,7 @@ public class ArcBall : IInputEventHandler {
         
         axis.Normalize();
 
-        m_Target.transform.Rotate(axis, angle, Space.World);
+        m_Target.transform.Rotate(axis, angle, Space.Self);
 
         m_PressPos = pos;
     }

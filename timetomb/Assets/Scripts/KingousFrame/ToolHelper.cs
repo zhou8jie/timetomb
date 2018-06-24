@@ -48,4 +48,17 @@ public class ToolHelper
         return true;
     }
 
+    public static bool SetMaterialParamsFloat(GameObject obj, string name, float val)
+    {
+        var render = obj.GetComponent<MeshRenderer>();
+        var mat = render.material;
+        mat.SetFloat(name, val);
+        return true;
+    }
+
+    public static float GetManhattanDis(Vector3 pos1, Vector3 pos2)
+    {
+        return Mathf.Abs(pos1.x - pos2.x) + Mathf.Abs(pos1.y - pos2.y) + Mathf.Abs(pos1.z - pos2.z);
+    }
+
 }

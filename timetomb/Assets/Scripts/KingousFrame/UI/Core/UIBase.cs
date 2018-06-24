@@ -19,6 +19,7 @@ public abstract class UIBase : MonoBehaviour
 
     private Canvas _canvas;
     private GraphicRaycaster _raycaster;
+    private CanvasGroup _canvasGroup;
 
     private bool _isShow = false;
 
@@ -26,6 +27,7 @@ public abstract class UIBase : MonoBehaviour
     {
         _canvas = gameObject.AddComponent<Canvas>();
         _raycaster = gameObject.AddComponent<GraphicRaycaster>();
+        _canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
         onCreate();
     }
@@ -39,10 +41,61 @@ public abstract class UIBase : MonoBehaviour
 
     public void hide()
     {
-        Debug.LogError(gameObject.name);
         UIManager.get().remove(this);
         onHide();
         Object.Destroy(gameObject);
+    }
+
+    public void fadeIn(float during=1)
+    {
+        show(true);
+        _canvasGroup.alpha = 0;
+        if (during <= 0)
+            return;
+        StartCoroutine(_fadeIn(during));
+    }
+
+    IEnumerator _fadeIn(float during)
+    {
+        while (true)
+        {
+            if (during <= 0)
+                yield break;
+            float step = 1f / during;
+            _canvasGroup.alpha += Time.deltaTime * step;
+            if (_canvasGroup.alpha >= 1f)
+            {
+                _canvasGroup.alpha = 1f;
+                yield break; 
+            }
+            yield return 0;
+        }
+    }
+
+    public void fadeOut(float during=1)
+    {
+        if (during <= 0)
+        {
+            hide();
+            return;
+        }
+        StartCoroutine(_fadeOut(1));
+    }
+
+    IEnumerator _fadeOut(float during)
+    {
+        while (true)
+        {
+            float step = 1f / during;
+            _canvasGroup.alpha -= Time.deltaTime * step;
+            if (_canvasGroup.alpha <= 0)
+            {
+                _canvasGroup.alpha = 0;
+                hide();
+                yield break;
+            }
+            yield return 0;
+        }
     }
 
     protected void AddTriggerListener(GameObject obj, EventTriggerType eventID, UnityAction<BaseEventData> action)

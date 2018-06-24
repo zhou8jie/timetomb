@@ -30,22 +30,20 @@ public class GameMode
 
     void EnterMainState()
     {
-        UIManager.get().show("UIMain");
+        UIManager.get().show("UIMain", 2f);
         GameGlobal.Instance().levelMgr.EnableLevels(false);
     }
 
     void EnterEnterLevelState()
     {
-        UIManager.get().find<UIMain>("UIMain").ToTransparent(1f);
-        Debug.LogError("enter levell...");
-        GameGlobal.Instance().timer.AddTimer(1f, 1f, false, () => {
+        UIManager.get().find<UIMain>("UIMain").fadeOut(2f);
+        GameGlobal.Instance().timer.AddTimer(2f, 2f, false, () => {
             ChangeGameState(GameMode.State_Play);
         });
     }
 
     void EnterPlayState()
     {
-        UIManager.get().hide("UIMain");
         GameGlobal.Instance().levelMgr.EnableLevels(true);
         GameGlobal.Instance().levelMgr.StartCurLevel();
     }

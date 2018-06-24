@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using KingousFramework;
+using DG.Tweening;
 
 public class GameGlobal : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class GameGlobal : MonoBehaviour
     void Awake()
     {
         s_Inst = this;
+        DOTween.Init();
     }
 
     void Start ()
