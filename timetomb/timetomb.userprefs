@@ -1,25 +1,59 @@
-﻿<Properties StartupConfiguration="{C38D7D7C-0A35-D206-2660-5442F0008795}|" StartupItem="timetomb.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Test.cs">
+﻿<Properties StartupConfiguration="{C38D7D7C-0A35-D206-2660-5442F0008795}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameLogic/LevelManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLogic\GameGlobal.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic\LevelManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic\GameMode.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\KingousFrame\FSM.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameUI\UIMain.cs" Line="58" Column="31" />
-      <File FileName="Assets\Scripts\KingousFrame\UI\Core\UIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\KingousFrame\UI\Core\UIBase.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\KingousFrame\UI\Core\UIName.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLogic\Level.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\KingousFrame\Utils\ArcBall.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\KingousFrame\UI\Core\Layout\DataDrivenLayoutGroup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameUI\UISettlement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Test.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameLogic/Level.cs" Line="32" Column="15" />
+      <File FileName="Assets/Scripts/KingousFrame/FSM.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameLogic/GameMode.cs" Line="38" Column="40" />
+      <File FileName="Assets/Scripts/GameLogic/GameGlobal.cs" Line="54" Column="65" />
+      <File FileName="Assets/Scripts/KingousFrame/SoundManager.cs" Line="104" Column="73" />
+      <File FileName="Assets/Scripts/GameUI/UIMain.cs" Line="61" Column="59" />
+      <File FileName="Assets/Scripts/GameLogic/LevelManager.cs" Line="70" Column="13" />
+      <File FileName="Assets/Scripts/GameUI/UISettlement.cs" Line="18" Column="73" />
+      <File FileName="Assets/Scripts/KingousFrame/Utils/ArcBall.cs" Line="27" Column="19" />
+      <File FileName="Assets/Scripts/KingousFrame/InputManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameLogic/GameModule.cs" Line="14" Column="2" />
+      <File FileName="Assets/Scripts/KingousFrame/CameraController.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="timetomb" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="GameLogic" expanded="True">
+                  <Node name="LevelManager.cs" selected="True" />
+                </Node>
+                <Node name="GameUI" expanded="True" />
+                <Node name="KingousFrame" expanded="True">
+                  <Node name="Utils" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State name="__root__">
+          <Node name="timetomb" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="timetomb" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/zhouyuan/Documents/GitHub/timetomb/timetomb/Assets/Scripts/GameLogic/Level.cs" relfile="Assets/Scripts/GameLogic/Level.cs" line="34" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.timetomb PreferredExecutionTarget="Unity.Editor" />
   <MultiItemStartupConfigurations />
 </Properties>

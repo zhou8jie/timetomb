@@ -11,6 +11,7 @@ public class GameGlobal : MonoBehaviour
     private Timer m_Timer = new Timer();
     private LevelManager m_LevelManager = null;
     private InputManager m_InputManager = null;
+    private SoundManager m_SoundManager = null;
 
     public InputManager inputMgr
     {
@@ -29,6 +30,10 @@ public class GameGlobal : MonoBehaviour
     {
         get { return m_LevelManager; }
     }
+    public SoundManager soundMgr
+    {
+        get { return m_SoundManager; }
+    }
 
     public static GameGlobal s_Inst = null;
     public static GameGlobal Instance()
@@ -46,8 +51,11 @@ public class GameGlobal : MonoBehaviour
     {
         m_InputManager = GetComponentInChildren<InputManager>();
         m_LevelManager = GameObject.Find("/Levels").GetComponent<LevelManager>();
+        m_SoundManager = GetComponentInChildren<SoundManager>();
         m_Mode = new GameMode();
         m_Mode.ChangeGameState(GameMode.State_Main);
+
+        m_SoundManager.PlayBGM("bg_night");
 	}
 	
 	void Update ()

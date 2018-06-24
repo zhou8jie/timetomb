@@ -11,6 +11,9 @@ public class GameMode
     public static readonly string State_Solved = "Solved";
     public static readonly string State_Settlement = "Settlement";
 
+    public static float ReadyCameraSize = 10;
+    public static float SolvedCameraSize = 15;
+
     public string curState
     {
         get;
@@ -26,12 +29,14 @@ public class GameMode
         m_FSM.addEnterState(State_Play, EnterPlayState);
         m_FSM.addEnterState(State_Solved, EnterSolvedState);
         m_FSM.addEnterState(State_Settlement, EnterSettlementState);
+        m_FSM.addLeaveState(State_Settlement, LeaveSettlementState);
     }
 
     void EnterMainState()
     {
         UIManager.get().show("UIMain", 2f);
         GameGlobal.Instance().levelMgr.EnableLevels(false);
+        CameraController.Instance().cam.orthographicSize = ReadyCameraSize;
     }
 
     void EnterEnterLevelState()
@@ -60,6 +65,11 @@ public class GameMode
     void EnterSettlementState()
     {
         UIManager.get().show("UISettlement");
+    }
+
+    void LeaveSettlementState()
+    {
+        GameGlobal.Instance().levelMgr.LeaveCurLevel();
     }
 
     public void ChangeGameState(string state)

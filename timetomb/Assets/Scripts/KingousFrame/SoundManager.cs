@@ -8,7 +8,7 @@ namespace KingousFramework
     {
         public AudioSource BGAudio;
         public AudioSource FxAudio;
-        public string Path = "Sound/";
+        public string Path = "AudioClips/";
         
         private static SoundManager s_Instance = null;
         public SoundManager Instance()
@@ -16,7 +16,7 @@ namespace KingousFramework
             return s_Instance;
         }
 
-        private Dictionary<string, AudioClip> m_Clips;
+        private Dictionary<string, AudioClip> m_Clips = new Dictionary<string, AudioClip>();
 
         private void Awake()
         {
@@ -101,7 +101,7 @@ namespace KingousFramework
             var clip = Resources.Load<AudioClip>(Path + name);
             if (clip == null)
             {
-                Debug.LogError("Cant find audio clip named : " + name);
+                Debug.LogError("Cant find audio clip named : " + Path + name);
                 return null;
             }
             m_Clips[name] = clip;

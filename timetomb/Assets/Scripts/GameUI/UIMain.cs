@@ -55,10 +55,10 @@ public class UIMain : UIBase {
         string name = obj.name;
         string lvlName = name.Substring(4, 1);
         int lvl = int.Parse(lvlName);
-        Debug.LogError(lvl - 1);
 
         GameModule.Instance().curLevelIdx = lvl - 1;
         GameGlobal.Instance().mode.ChangeGameState(GameMode.State_EnterLevel);
+        GameGlobal.Instance().soundMgr.PlayFx("sfx_dong");
     }
 
     public void ToTransparent(float during)

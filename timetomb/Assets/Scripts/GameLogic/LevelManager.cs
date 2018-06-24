@@ -10,11 +10,21 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         m_Levels = GetComponentsInChildren<Level>();
+        GameModule.Instance().curLevelIdx = 0;
     }
 
     public void EnableLevels(bool enable)
     {
         gameObject.SetActive(enable);
+        if (enable)
+        {
+            var curLevel = GameModule.Instance().curLevelIdx;
+            for (int i = 0; i < m_Levels.Length; i++)
+            {
+                m_Levels[i].gameObject.SetActive(false);
+            }
+            m_Levels[curLevel].gameObject.SetActive(true);
+        }
     }
 
     public void StartCurLevel()
@@ -30,8 +40,15 @@ public class LevelManager : MonoBehaviour
         if (m_CurLevel == null)
             return;
         m_CurLevel.End();
+    }
+
+    public void LeaveCurLevel()
+    {
+        m_CurLevel.Reset();
         GameGlobal.Instance().inputMgr.RemoveEventHandler(m_CurLevel);
         m_CurLevel = null;
+
+        GameModule.Instance().curLevelIdx++;
     }
 
     public void Update()
